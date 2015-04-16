@@ -36,11 +36,11 @@ public class MainTestApp {
 				+ p.calcStepResult(in));
 	}
 
-	private static void testPerceptronLearning() {
+	private static void testPerceptronLearningOr() {
 
 		System.out.println(" Test complete learning algorithm");
 
-		Perceptron p = new Perceptron(2, new RandomWeightSetter());
+		Perceptron p = new Perceptron(2, new MyWeightSetter());
 		p.name = "OR-Operator";
 		System.out.println(p);
 		ArrayList<LearnInstance> samples = new ArrayList<LearnInstance>();
@@ -85,6 +85,6 @@ public class MainTestApp {
 	public static void main(String[] args) {
 		testHardcodedPerceptron();
 
-		testPerceptronLearning();
+		testPerceptronLearningOr();
 	}
 }

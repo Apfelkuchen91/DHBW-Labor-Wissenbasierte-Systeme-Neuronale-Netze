@@ -85,9 +85,7 @@ public class Perceptron {
 
 		setNewInput(newInputs);
 
-		double res = 0.0; // TODO
-
-		return res;
+		return scalarProduct(weights, input);
 	}
 
 	public boolean learn(ArrayList<LearnInstance> samples){
@@ -97,9 +95,27 @@ public class Perceptron {
 	}
 	
 	private void setNewInput(double[] newinput) {
+		input[0]  =  1;
 
-		// TODO
+		for(int i = 0; i < newinput.length; i++){
+			input[i+1] = newinput[i];
+		}
 	}
+
+	private double scalarProduct(double[] a, double[] b)
+	{
+		if(a.length != b.length) {
+			return Double.NaN;
+		}
+		double res = 0.0;
+
+		for(int i = 0; i < a.length; i++){
+			res += a[i] * b[i];
+		}
+
+		return res;
+	}
+
 
 	public String toString() {
 		String res = "Perceptron \"" + name + "\"\n";
