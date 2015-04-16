@@ -45,9 +45,9 @@ public class MainTestApp {
 		System.out.println(p);
 		ArrayList<LearnInstance> samples = new ArrayList<LearnInstance>();
 
-		samples.add(new LearnInstance(false, new double[] { 0.0, 0.0 }));
-		samples.add(new LearnInstance(true, new double[] { 0.0, 1.0 }));
-		samples.add(new LearnInstance(true, new double[] { 1.0, 0.0 }));
+		samples.add(new LearnInstance(false, new double[] { -1.0, -1.0 }));
+		samples.add(new LearnInstance(true, new double[] { -1.0, 1.0 }));
+		samples.add(new LearnInstance(true, new double[] { 1.0, -1.0 }));
 		samples.add(new LearnInstance(true, new double[] { 1.0, 1.0 }));
 
 		p.learn(samples);
@@ -57,17 +57,17 @@ public class MainTestApp {
 
 		double in[] = new double[2];
 
-		in[0] = 0;
-		in[1] = 0;
+		in[0] = -1.0;
+		in[1] = -1.0;
 		System.out.println("0 || 0  => " + p.calculateRawResult(in) + "  ==>  "
 				+ p.calcStepResult(in));
 
 		in[0] = 1.0;
-		in[1] = 0;
+		in[1] = -1.0;
 		System.out.println("0 || 1  => " + p.calculateRawResult(in) + "  ==>  "
 				+ p.calcStepResult(in));
 
-		in[0] = 0;
+		in[0] = -1.0;
 		in[1] = 1.0;
 		System.out.println("1 || 0  => " + p.calculateRawResult(in) + "  ==>  "
 				+ p.calcStepResult(in));
